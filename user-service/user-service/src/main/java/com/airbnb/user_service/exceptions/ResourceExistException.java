@@ -1,7 +1,9 @@
 package com.airbnb.user_service.exceptions;
 
-public class ResourceExistException extends RuntimeException {
+import org.springframework.http.HttpStatus;
+
+public class ResourceExistException extends ApiException {
     public ResourceExistException(String message) {
-        super(message);
+        super(message, HttpStatus.NOT_FOUND);
     }
 }
